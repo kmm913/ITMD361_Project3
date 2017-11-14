@@ -238,6 +238,17 @@ visibility: visible;
     height: 100%;
   }
 
+.title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+}
+      
+#map #infowindow-content {
+  display: inline;
+}
 
 /* CSS for page 2 only */
 
