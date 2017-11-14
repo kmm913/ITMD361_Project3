@@ -97,8 +97,9 @@
     <script>
       var map;
       function initMap() {
+        var bSunday = {lat: 41.927808, lng: -87.706501};
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 41.927808, lng: -87.706501},
+          center: bSunday,
           zoom: 16
         });
       }
