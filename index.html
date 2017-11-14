@@ -97,11 +97,16 @@
     <script>
     
       function initMap() {
-        var bSunday = {lat: 41.927808, lng: -87.706501};
+        var bSunday = {lat: 41.927835, lng: -87.706510};
         var map = new google.maps.Map(document.getElementById("map"), {
           center: bSunday,
           zoom: 16
         });
+        
+        var marker = new google.maps.Marker({
+          position: bSunday,
+          map: map,
+          });
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZOVFWzvZhwpYxfkM_QTcnKDIDBnGCbxQ&libraries=places&callback=initMap"
