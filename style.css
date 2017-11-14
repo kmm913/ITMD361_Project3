@@ -55,13 +55,21 @@ table {
 
 /*shared CSS for all three pages */
 
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .container{
   margin-left: auto;
   margin-right: auto;
+  height: 100%;
   width: 960px;
 }
 
 body {
+  height: 100%;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -225,6 +233,11 @@ visibility: visible;
 @media all and (min-width: 800px) {
 	.flex-item {flex: 3 0px; }
 }
+
+#map {
+    height: 100%;
+  }
+
 
 /* CSS for page 2 only */
 
