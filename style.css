@@ -1,0 +1,298 @@
+/* begin CSS reset*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+
+/*end CSS reset*/
+
+/*shared CSS for all three pages */
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+ h1 {
+  font-family: 'IM Fell French Canon SC', serif;
+  font-size: 2.6em;
+  font-weight: bold;
+  color: #103C66; 
+  padding: 10px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'IM Fell French Canon SC', serif;
+  font-size: 2.1em;
+  font-weight: bold;
+  color: #103C66; 
+  padding: 10px;
+  border-top-style: double; 
+  border-width: 5px;
+  border-color: #16776C;
+  text-align: center;  
+}
+
+p {
+  font-family: serif; 
+  font-weight: normal; 
+  font-size: 1.1em;
+  color: black;
+  padding: 10px; 
+  text-align: justify;
+}
+
+.nav {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+ .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #9E570D;
+	  border-radius: 15px 50px 30px;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav li a {
+    display: inline-block;
+    font-size: 1em;
+    color: white;
+    text-align: center; 
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: gray;
+}
+
+img {
+  width: 15%;
+  height: auto;
+  border-radius: 5px 5px 5px; 
+  margin: 5px;
+  }
+  
+/* CSS for page 1 only */
+
+h3 {
+  font-family: 'IM Fell French Canon SC', serif;
+  color: #103C66;
+  padding: 10px;
+}
+
+.tool-flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+	
+}
+
+.tool-flex-container > * {
+    padding: 10px;
+    flex: 1 150px;
+}
+
+.tool-flex-item {
+	width: auto; 
+	height: auto; 
+	margin: 10px; 
+	color: white; 
+	font-weight: bold; 
+	font-size: 1.6em; 
+	font-family: serif; 
+	text-align: center; 
+	border-style: solid; 
+	border-radius: 10px; 
+}
+
+.toolsIMG {
+  width: 75%;
+  height: auto;
+  border-radius: 5px 5px 5px; 
+  margin: 5px;
+  }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 3px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    height: auto;
+    line-height: 20px;
+    background-color: black;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible; 
+}
+
+
+@media all and (min-width: 600px) {
+	.flex-item1 {flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+	.flex-item {flex: 3 0px; }
+}
+
+/* CSS for page 2 only */
+
+#combine{
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+}
+
+#combine li {
+  list-style-type: disc;
+  list-style-position: inside; 
+  text-indent: -1em;
+  padding-left: 1em; 
+}
+
+.imgTwo {
+  width: 25%;
+  height: auto;
+  border-radius: 5px 5px 5px; 
+  margin: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgR {
+  width: 10%;
+  height: auto;
+  border-radius: 5px 5px 5px; 
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#imagesR {
+  text-align: center;
+}
+
+#video{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+/*CSS for page 3 only */
+
+#skills li, #experience li {
+  list-style-type: square;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+#experience ul {
+  padding-bottom: 10px;
+}
+
+#experience h4 {
+  font-weight: bold;
+  float: left;
+  margin-right: 25px;
+  margin-left: 10px;
+}
+
+#experience p {
+  padding-top: 25px;
+}
