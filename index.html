@@ -103,6 +103,12 @@
           zoom: 16
         });
         
+        var infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        
+        var service = new google.maps.places.PlacesService(map);
+        
         var marker = new google.maps.Marker({
           position: bSunday,
           map: map,
