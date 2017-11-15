@@ -94,10 +94,6 @@
       chosen your ingredients, you are ready to craft the perfect old fasioned. <!--make last sentence a link to recipe page-->
     </p>
     <div id="map"></div>
-    <div id="infowindow-content">
-      <span id="place-name"  class="title"></span><br>
-      Place ID <span id="place-id"></span><br>
-      <span id="place-address"></span>
     </div>
     <script>    
       function initMap(){
@@ -120,8 +116,7 @@
             });
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
+              place.formatted_address + '</div>');
               infowindow.open(map, this);
             });
           }
