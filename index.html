@@ -6,6 +6,10 @@
   <title>Constructing the Classic Old Fashioned Cocktail: Origins, Tools, and Preparation</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC" rel="stylesheet"> 
+  <script src="jscript.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZOVFWzvZhwpYxfkM_QTcnKDIDBnGCbxQ&libraries=places&callback=initMap"
+        async defer>
+    </script>
 </head>
 
 <body>
@@ -94,38 +98,7 @@
       chosen your ingredients, you are ready to craft the perfect old fasioned. <!--make last sentence a link to recipe page-->
     </p>
     <div id="map"></div>
-    </div>
-    <script>    
-      function initMap(){
-        var bSunday = {lat: 41.927835, lng: -87.706510};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: bSunday,
-          zoom: 16
-        });
-        
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-
-        service.getDetails({
-          placeId: 'ChIJa2SIvXrND4gRrPqCMMhIes0'
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-              place.formatted_address + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZOVFWzvZhwpYxfkM_QTcnKDIDBnGCbxQ&libraries=places&callback=initMap"
-        async defer>
-    </script>
+    </div>    
   </div>    
 </body>
 </html>
