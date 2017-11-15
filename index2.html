@@ -94,35 +94,46 @@
       chosen your ingredients, you are ready to craft the perfect old fasioned. <!--make last sentence a link to recipe page-->
     </p>
     <div id="map"></div>
-    <script>
+    <div id="infowindow-content">
+      <span id="place-name"  class="title"></span><br>
+      Place ID <span id="place-id"></span><br>
+      <span id="place-address"></span>
+    </div>
+    <script>    
       function initMap() {
-        var bSunday = {lat: 41.927808, lng: -87.706501};
-        var map = new google.maps.Map(document.getElementById("map"), {
-          center: bSunday,
-          zoom: 16
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13
         });
         
-        var request = {
-          placeId: "ChIJa2SIvXrND4gRrPqCMMhIes0"
-          };
-        
-        var infoWindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
+        var place = service.getDetails({
+          placeId: 'ChIJa2SIvXrND4gRrPqCMMhIes0'
+          });
         
-        service.getDetails(request, function(place, status){
-          if (status === google.maps.places.PlacesServiceStatus.OK){
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            
-            google.maps.event.addListener(marker, 'click', function() {
-            infoWindow.setContent(place.name + "\n" + place.formatted_address);
-            infoWindow.open(map, marker);
-            });
-            }
+        var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        infowindow.setContent(infowindowContent);
+        
+        var marker = new google.maps.Marker({
+          map: map
         });
-      }
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+        
+          // Set the position of the marker using the place ID and location.
+            marker.setPlace({
+            placeId: place.place_id,
+            location: place.geometry.location
+          });
+          marker.setVisible(true);
+
+          infowindowContent.children['place-name'].textContent = place.name;
+          infowindowContent.children['place-id'].textContent = place.place_id;
+          infowindowContent.children['place-address'].textContent = place.formatted_address;
+          infowindow.open(map, marker);
+        }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZOVFWzvZhwpYxfkM_QTcnKDIDBnGCbxQ&libraries=places&callback=initMap"
         async defer>
