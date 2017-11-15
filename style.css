@@ -237,6 +237,7 @@ visibility: visible;
 #map {
     height: 500px;
     width: 960px;
+    margin-bottom: 25px;
   }
 
 /* CSS for page 2 only */
