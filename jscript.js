@@ -1,4 +1,5 @@
-function initMap(){
+function initMap() {
+  "use strict";
   var bSunday = {lat: 41.927835, lng: -87.706510};
   var map = new google.maps.Map(document.getElementById("map"), {
   center: bSunday,
@@ -85,7 +86,7 @@ function initMap(){
             }
           ]
   });
-        
+
   var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
 
@@ -96,7 +97,7 @@ function initMap(){
         var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
-        animation: google.maps.Animation.BOUNCE,
+        animation: google.maps.Animation.BOUNCE
         });
         google.maps.event.addListener(marker, "click", function() {
         marker.setAnimation(null);
