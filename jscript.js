@@ -99,6 +99,7 @@ function initMap(){
         animation: google.maps.Animation.BOUNCE,
         });
         google.maps.event.addListener(marker, 'click', function() {
+        marker.setAnimation(null);
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
         place.formatted_address + '</div>');
         infowindow.open(map, this);
